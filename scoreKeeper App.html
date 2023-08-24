@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Score Keeper</title>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root" style="text-align: center"></div>
+
+    <script type="text/babel">
+      var score = 0;
+      var wicket = 0;
+
+      const App = () => (
+        <>
+          <h1> Score Keeper App </h1>
+          <h2>
+            Score: {score} / {wicket}
+          </h2>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button> 5</button>
+          <button>6</button>
+          <button> Wicket</button>
+        </>
+      );
+
+      const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      function renderRoot() {
+        rootElement.render(<App />);
+      }
+
+      renderRoot();
+    </script>
+  </body>
+</html>
