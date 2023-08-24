@@ -22,23 +22,35 @@
       var score = 0;
       var wicket = 0;
 
+      function addScore(num) {
+        score = score + num;
+        renderRoot();
+      }
+
+      function wicketDown() {
+        if (wicket < 12) wicket++;
+        renderRoot();
+      }
+
       const App = () => (
         <>
           <h1> Score Keeper App </h1>
           <h2>
+            {" "}
             Score: {score} / {wicket}
           </h2>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>4</button>
-          <button> 5</button>
-          <button>6</button>
-          <button> Wicket</button>
+          <button onClick={() => addScore(1)}>1</button>
+          <button onClick={() => addScore(2)}>2</button>
+          <button onClick={() => addScore(3)}>3</button>
+          <button onClick={() => addScore(4)}>4</button>
+          <button onClick={() => addScore(5)}>5</button>
+          <button onClick={() => addScore(6)}>6</button>
+          <button onClick={wicketDown}>Wicket</button>
         </>
       );
 
       const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+
       function renderRoot() {
         rootElement.render(<App />);
       }
